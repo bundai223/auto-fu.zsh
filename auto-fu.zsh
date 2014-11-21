@@ -711,7 +711,8 @@ with-afu-completer-vars () {
 }
 
 auto-fu () {
-  if [[ $#BUFFER -lt 3 ]] then
+  LAST_INPUT=${BUFFER##* }
+  if [[ $#LAST_INPUT -lt 3 ]] then
     return
   fi
 
