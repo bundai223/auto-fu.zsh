@@ -711,6 +711,10 @@ with-afu-completer-vars () {
 }
 
 auto-fu () {
+  if [[ $#BUFFER -lt 3 ]] then
+    return
+  fi
+
   cursor_cur="$CURSOR"
   buffer_cur="$BUFFER"
   with-afu-completer-vars zle complete-word
